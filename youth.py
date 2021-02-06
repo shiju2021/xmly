@@ -621,7 +621,7 @@ def run():
       content += f'\n【惊喜红包】：+{article_red_res["score"]}个青豆'
     read_time_res = readTime(body=readTimeBody)
     if read_time_res:
-      content += f'\n【阅读时长】：共计{read_time_res["time"] // 60}分钟'
+      content += f'\n【阅读时长】：共计{read_time_res["time"] }秒'
     if (hour >= 6 and hour <= 8) or (hour >= 11 and hour <= 13) or (hour >= 19 and hour <= 21):
       beread_red_res = bereadRed(headers=headers)
       if beread_red_res:
