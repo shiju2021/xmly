@@ -1,8 +1,8 @@
-name: 喜马拉雅极速版
+name: 喜马拉雅极速版0
 
 on:
   schedule:
-    - cron: '*/30 * * * * '
+    - cron: '*/30 * * * '
   watch:
     types: [started]
 jobs:
@@ -21,12 +21,15 @@ jobs:
         run: pip install -r ./requirements.txt 
         
       - name: 'run 喜马拉雅极速版' 
-        run: python3 xmly_speed.py 
+        run: python3 youth.py 
         env:
-            XMLY_SPEED_COOKIE: ${{ secrets.XMLY_SPEED_COOKIE }}  #必须
-            # XMLY_ACCUMULATE_TIME: ${{ secrets.XMLY_ACCUMULATE_TIME }} #非私密信息，去掉
-            BARK: ${{ secrets.BARK }}     # bark服务
-            SCKEY: ${{ secrets.SCKEY }}   # server酱服务
-            TG_BOT_TOKEN: ${{secrets.TG_BOT_TOKEN}} # tg通知token
-            TG_USER_ID:  ${{secrets.TG_USER_ID}}    # tg通知id
-    
+            YOUTH_HEADER1: ${{ secrets.YOUTH_HEADER1 }}  #必须 账号1 body1
+            YOUTH_READBODY1: ${{ secrets.YOUTH_READBODY1 }}  #必须 账号1 body1
+            YOUTH_REDBODY1: ${{ secrets.YOUTH_REDBODY1 }}  #必须 账号1 body1
+            YOUTH_READTIMEBODY1: ${{ secrets.YOUTH_READTIMEBODY1 }}  #必须 账号1 body1
+            YOUTH_WITHDRAWBODY1: ${{ secrets.YOUTH_READTIMEBODY1 }}  #非必须 账号1提现 body1
+            YOUTH_HEADER2: ${{ secrets.YOUTH_HEADER2 }}  #非必须 账号2 body2
+            YOUTH_READBODY2: ${{ secrets.YOUTH_READBODY2 }}  #非必须 账号2 body2
+            YOUTH_REDBODY2: ${{ secrets.YOUTH_REDBODY2 }}  #非必须 账号2 body2
+            YOUTH_READTIMEBODY2: ${{ secrets.YOUTH_READTIMEBODY2 }}  #非必须 账号2 body2
+            YOUTH_WITHDRAWBODY2: ${{ secrets.YOUTH_READTIMEBODY2 }}  #非必须 账号2提现 body2
