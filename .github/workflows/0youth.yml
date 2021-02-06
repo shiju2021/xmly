@@ -2,7 +2,7 @@ name: 中青阅0读
 
 on:
   schedule:
-    - cron: '*/30 5-23 * * *'
+    - cron: '*/30 * * * *'
   watch:
     types: [started]
     
